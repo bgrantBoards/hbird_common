@@ -58,7 +58,12 @@ class AgentControlNode(Node):
 
         pos_setpoint = Waypoint()
 
-        # your code here
+        # define new positional setpoint
+        # TODO: set according to x_des, y_des, etc.
+        pos_setpoint.position.x = self._state.position.x
+        pos_setpoint.position.y = self._state.position.y
+        pos_setpoint.position.z = 5
+        pos_setpoint.heading    = 3.14159
     
         # publish the setpoint
         self._pos_setpoint_publisher.publish(pos_setpoint)
